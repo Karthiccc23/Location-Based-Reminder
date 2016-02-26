@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.javacodegeeks.android.lbs"
+    android:versionCode="1"
+    android:versionName="1.0" >
+  <uses-sdk android:minSdkVersion="11" 
+  android:targetSdkVersion="11"/>
+    <application
+        android:icon="@drawable/location"
+        android:label="@string/app_name"
+         >
+        <activity
+            android:name=".ProxAlertActivity"
+              android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+                >
+        </activity>
+        <activity
+            android:name=".Mainpage"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:label="LBR" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.javacodegeeks.android.lbs.ProximityIntentReceiver" >
+            <intent-filter>
+                <action android:name="com.javacodegeeks.android.lbs" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+  
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <!--  <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
+<!--     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+</manifest>
